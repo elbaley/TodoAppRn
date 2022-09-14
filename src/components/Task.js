@@ -1,11 +1,11 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React from 'react'
 
-const Task = () => {
+const Task = ({task}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.checkbox} />
-      <Text style={styles.task}>Upload 1099-R to TurboTax</Text>
+      <Text style={styles.task}>{task.text}</Text>
     </View>
   )
 }

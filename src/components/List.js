@@ -1,15 +1,15 @@
-import {StyleSheet, Text, View} from 'react-native'
-import React from 'react'
+import {StyleSheet, Text, View, FlatList} from 'react-native'
+import React, {useState} from 'react'
 import Task from './Task'
 
-const List = () => {
+const List = ({tasks}) => {
+  function renderTask({item}) {
+    return <Task task={item} />
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tasks</Text>
-      <Task />
-      <Task />
-      <Task />
-      <Task />
+      <FlatList data={tasks} renderItem={renderTask} />
     </View>
   )
 }

@@ -6,19 +6,32 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
 } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-const TaskInput = () => {
+const TaskInput = ({addTask}) => {
+  const [task, setTask] = useState('')
+  function handleTaskChange(text) {
+    setTask(text)
+  }
   return (
     <KeyboardAvoidingView
       keyboardVerticalOffset={10}
       behavior="padding"
       style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} placeholder="Add task" />
+        <TextInput
+          onChangeText={handleTaskChange}
+          style={styles.input}
+          value={task}
+          placeholder="Add task"
+        />
         <View style={styles.addButton}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              addTask(task)
+              setTask('')
+            }}>
             <Icon size={32} color={'#1294F2'} name="add-circle-outline" />
           </TouchableOpacity>
         </View>
@@ -31,7 +44,7 @@ export default TaskInput
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 40,
+    marginBottom: 30,
   },
   inputContainer: {
     backgroundColor: '#2B2B30',
