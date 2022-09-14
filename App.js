@@ -1,14 +1,13 @@
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 import Header from './src/components/Header'
+import List from './src/components/List'
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <View>
-        <Text>App</Text>
-      </View>
+      <List />
     </SafeAreaView>
   )
 }
