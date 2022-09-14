@@ -14,16 +14,15 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-TodoAppRn-TodoAppRnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TodoAppRn-TodoAppRnTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		DC0CC0B228D2102B00CF9A73 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC99A71128D20EE90072C1E9 /* Ionicons.ttf */; };
-		DC5EC11728D154160052DA8C /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC10E28D154160052DA8C /* Inter-Medium.ttf */; };
-		DC5EC11828D154160052DA8C /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC10F28D154160052DA8C /* Inter-Black.ttf */; };
-		DC5EC11928D154160052DA8C /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11028D154160052DA8C /* Inter-ExtraBold.ttf */; };
-		DC5EC11A28D154160052DA8C /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11128D154160052DA8C /* Inter-Light.ttf */; };
-		DC5EC11B28D154160052DA8C /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11228D154160052DA8C /* Inter-Regular.ttf */; };
-		DC5EC11C28D154160052DA8C /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11328D154160052DA8C /* Inter-ExtraLight.ttf */; };
-		DC5EC11D28D154160052DA8C /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11428D154160052DA8C /* Inter-Thin.ttf */; };
-		DC5EC11E28D154160052DA8C /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11528D154160052DA8C /* Inter-Bold.ttf */; };
-		DC5EC11F28D154160052DA8C /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11628D154160052DA8C /* Inter-SemiBold.ttf */; };
+		DCB4DD0F28D25613009C598D /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC10F28D154160052DA8C /* Inter-Black.ttf */; };
+		DCB4DD1028D25613009C598D /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11528D154160052DA8C /* Inter-Bold.ttf */; };
+		DCB4DD1128D25613009C598D /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11028D154160052DA8C /* Inter-ExtraBold.ttf */; };
+		DCB4DD1228D25613009C598D /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11328D154160052DA8C /* Inter-ExtraLight.ttf */; };
+		DCB4DD1328D25613009C598D /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11128D154160052DA8C /* Inter-Light.ttf */; };
+		DCB4DD1428D25613009C598D /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC10E28D154160052DA8C /* Inter-Medium.ttf */; };
+		DCB4DD1528D25613009C598D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11228D154160052DA8C /* Inter-Regular.ttf */; };
+		DCB4DD1628D25613009C598D /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11628D154160052DA8C /* Inter-SemiBold.ttf */; };
+		DCB4DD1728D25613009C598D /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5EC11428D154160052DA8C /* Inter-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -280,18 +279,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0CC0B228D2102B00CF9A73 /* Ionicons.ttf in Resources */,
-				DC5EC11928D154160052DA8C /* Inter-ExtraBold.ttf in Resources */,
+				DCB4DD0F28D25613009C598D /* Inter-Black.ttf in Resources */,
+				DCB4DD1028D25613009C598D /* Inter-Bold.ttf in Resources */,
+				DCB4DD1128D25613009C598D /* Inter-ExtraBold.ttf in Resources */,
+				DCB4DD1228D25613009C598D /* Inter-ExtraLight.ttf in Resources */,
+				DCB4DD1328D25613009C598D /* Inter-Light.ttf in Resources */,
+				DCB4DD1428D25613009C598D /* Inter-Medium.ttf in Resources */,
+				DCB4DD1528D25613009C598D /* Inter-Regular.ttf in Resources */,
+				DCB4DD1628D25613009C598D /* Inter-SemiBold.ttf in Resources */,
+				DCB4DD1728D25613009C598D /* Inter-Thin.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				DC5EC11D28D154160052DA8C /* Inter-Thin.ttf in Resources */,
-				DC5EC11F28D154160052DA8C /* Inter-SemiBold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				DC5EC11C28D154160052DA8C /* Inter-ExtraLight.ttf in Resources */,
-				DC5EC11728D154160052DA8C /* Inter-Medium.ttf in Resources */,
-				DC5EC11E28D154160052DA8C /* Inter-Bold.ttf in Resources */,
-				DC5EC11A28D154160052DA8C /* Inter-Light.ttf in Resources */,
-				DC5EC11828D154160052DA8C /* Inter-Black.ttf in Resources */,
-				DC5EC11B28D154160052DA8C /* Inter-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
