@@ -1,11 +1,27 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React from 'react'
+import Icon from 'react-native-vector-icons/Ionicons'
 
-const Task = ({task}) => {
+const Task = ({task, toggle}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.checkbox} />
-      <Text style={styles.task}>{task.text}</Text>
+      <TouchableOpacity
+        onPress={() => {
+          toggle(task.id)
+        }}
+        style={styles.checkbox}>
+        {task.completed && (
+          <Icon
+            style={styles.completed}
+            color={'gray'}
+            size={20}
+            name="checkmark-sharp"
+          />
+        )}
+      </TouchableOpacity>
+      <Text style={[styles.task, task.completed && styles.taskCompleted]}>
+        {task.text}
+      </Text>
     </View>
   )
 }
@@ -32,5 +48,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter',
     fontWeight: '500',
     fontSize: 14,
+  },
+  taskCompleted: {
+    textDecorationColor: 'white',
+    textDecorationLine: 'line-through',
   },
 })

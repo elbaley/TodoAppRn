@@ -2,9 +2,9 @@ import {StyleSheet, Text, View, FlatList} from 'react-native'
 import React, {useState} from 'react'
 import Task from './Task'
 
-const List = ({tasks}) => {
+const List = ({tasks, toggle}) => {
   function renderTask({item}) {
-    return <Task task={item} />
+    return <Task toggle={toggle} task={item} />
   }
   return (
     <View style={styles.container}>
