@@ -19,6 +19,7 @@ export default List
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
+    flex: 1,
   },
   title: {
     color: '#EBEBEB',
