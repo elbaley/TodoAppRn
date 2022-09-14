@@ -1,12 +1,19 @@
-import {StyleSheet, Text, View, Image} from 'react-native'
+import {StyleSheet, Text, View, Image, Dimensions} from 'react-native'
 import React from 'react'
 
 const Header = () => {
+  const isoString = new Date().toISOString()
+  const date = new Date(isoString)
+  const formattedDate = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(date)
   return (
     <>
       <View style={styles.container}>
         <View style={styles.inner_container}>
-          <Text style={styles.date}>March 9, 2020</Text>
+          <Text style={styles.date}>{formattedDate}</Text>
           <Image
             style={styles.avatar}
             source={{
@@ -35,7 +42,7 @@ const styles = StyleSheet.create({
   },
   date: {
     color: 'white',
-    fontSize: 32,
+    fontSize: 30,
     fontFamily: 'Inter',
     fontWeight: '700',
     flex: 1,
