@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, View, Image} from 'react-native'
 import React from 'react'
 
 const Header = () => {
@@ -7,6 +7,12 @@ const Header = () => {
       <View style={styles.container}>
         <Text style={styles.date}>March 9, 2020</Text>
         <Text style={styles.info}>5 incomplete, 5 completed</Text>
+        <Image
+          style={styles.avatar}
+          source={{
+            uri: 'https://avatars.githubusercontent.com/u/46905324?s=400&u=3b55bc7a2ea52c75e28dba472b836161ca9126e3&v=4',
+          }}
+        />
         <View style={styles.divider}></View>
       </View>
     </>
@@ -35,9 +41,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   divider: {
-    marginTop: 16,
+    marginVertical: 16,
     height: 2,
     backgroundColor: 'rgba(255, 255, 255, 0.05)',
     borderRadius: 5,
+  },
+  avatar: {
+    height: 80,
   },
 })
