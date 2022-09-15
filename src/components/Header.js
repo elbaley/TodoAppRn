@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, Image, Dimensions} from 'react-native'
 import React from 'react'
 
-const Header = () => {
+const Header = ({completedTaskCount, incompleteTaskCount}) => {
   const isoString = new Date().toISOString()
   const date = new Date(isoString)
   const formattedDate = new Intl.DateTimeFormat('en-US', {
@@ -21,7 +21,9 @@ const Header = () => {
             }}
           />
         </View>
-        <Text style={styles.info}>5 incomplete, 5 completed</Text>
+        <Text style={styles.info}>
+          {incompleteTaskCount} incomplete, {completedTaskCount} completed
+        </Text>
 
         <View style={styles.divider}></View>
       </View>

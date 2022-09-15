@@ -8,7 +8,11 @@ import uuid from 'react-native-uuid'
 
 const App = () => {
   const [tasks, setTasks] = useState([])
-  //
+  // tasks info
+  const completedTaskCount = tasks.filter(
+    task => task.completed === true,
+  ).length
+  const incompleteTaskCount = tasks.length - completedTaskCount
   //AsyncStorage
   const storeData = async value => {
     const stringifiedState = JSON.stringify(value)
@@ -77,7 +81,10 @@ const App = () => {
   }
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      <Header
+        completedTaskCount={completedTaskCount}
+        incompleteTaskCount={incompleteTaskCount}
+      />
       <List toggle={toggleCompleted} deleteTask={deleteTask} tasks={tasks} />
       <TaskInput addTask={addTask} />
     </SafeAreaView>
