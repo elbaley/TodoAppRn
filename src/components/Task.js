@@ -1,28 +1,50 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
+import Swipeable from 'react-native-gesture-handler/Swipeable'
 
-const Task = ({task, toggle}) => {
+const Task = ({task, toggle, deleteTask}) => {
+  const RightSwipeActions = () => {
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          width: 55,
+          height: 24,
+          paddingHorizontal: 5,
+        }}>
+        <TouchableOpacity
+          onPress={() => {
+            deleteTask(task.id)
+          }}>
+          <Icon size={22} color={'white'} name="trash" />
+        </TouchableOpacity>
+      </View>
+    )
+  }
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => {
-          toggle(task.id)
-        }}
-        style={styles.checkbox}>
-        {task.completed && (
-          <Icon
-            style={styles.completed}
-            color={'gray'}
-            size={20}
-            name="checkmark-sharp"
-          />
-        )}
-      </TouchableOpacity>
-      <Text style={[styles.task, task.completed && styles.taskCompleted]}>
-        {task.text}
-      </Text>
-    </View>
+    <Swipeable overshootRight={false} renderRightActions={RightSwipeActions}>
+      <View style={styles.container}>
+        <TouchableOpacity
+          onPress={() => {
+            toggle(task.id)
+          }}
+          style={styles.checkbox}>
+          {task.completed && (
+            <Icon
+              style={styles.completed}
+              color={'gray'}
+              size={20}
+              name="checkmark-sharp"
+            />
+          )}
+        </TouchableOpacity>
+        <Text style={[styles.task, task.completed && styles.taskCompleted]}>
+          {task.text}
+        </Text>
+      </View>
+    </Swipeable>
   )
 }
 

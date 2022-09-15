@@ -4,69 +4,67 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import Header from './src/components/Header'
 import List from './src/components/List'
 import TaskInput from './src/components/TaskInput'
+import uuid from 'react-native-uuid'
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    // {id: 0, text: 'Lorem ipsum dolor sit amet.', completed: true},
-  ])
-
+  const [tasks, setTasks] = useState([])
+  //
+  //AsyncStorage
   const storeData = async value => {
     const stringifiedState = JSON.stringify(value)
     try {
-      console.log('saving state on the phone...')
       await AsyncStorage.setItem('localTasks', stringifiedState)
     } catch (e) {
-      // saving error
+      console.log(e)
     }
   }
-
-  // const getData = async () => {
-  //   try {
-  //     const value = await AsyncStorage.getItem('localTasks')
-  //     if (value !== null) {
-  //       // value previously stored
-  //       return value
-  //     }
-  //   } catch (e) {
-  //     // error reading value
-  //   }
-  // }
 
   const getData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('localTasks')
       if (jsonValue !== null) {
-        console.log('fonksiyondan geliyorum', JSON.parse(jsonValue))
         return JSON.parse(jsonValue)
       }
     } catch (e) {
-      // error reading value
+      console.log(e)
     }
   }
+
   useEffect(() => {
-    if (tasks.length === 0) {
-      //get tasks from local storage
-      getData()
-        .then(res => {
-          console.log('useEFFECTTEN', res)
-          setTasks(res)
-        })
-        .catch(err => {
-          console.log('ERRRORR')
-        })
-    } else {
+    //get state from storage
+    getData()
+      .then(res => {
+        //if there is nothing on local storage abort
+        if (!res) return
+        console.log('here is local storage', res)
+        setTasks(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+  useEffect(() => {
+    //save state to storage
+    if (tasks.length !== 0) {
       storeData(tasks)
     }
   }, [tasks])
 
+  // Add/Delete/Toggle Task
   function addTask(text) {
     const taskObj = {
-      id: tasks.length,
+      id: uuid.v4(),
       text,
       completed: false,
     }
     setTasks(oldTasks => {
       return [...oldTasks, taskObj]
+    })
+  }
+  function deleteTask(id) {
+    setTasks(oldTasks => {
+      const newTasks = oldTasks.filter(task => task.id !== id)
+      return newTasks
     })
   }
   function toggleCompleted(id) {
@@ -80,7 +78,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <List toggle={toggleCompleted} tasks={tasks} />
+      <List toggle={toggleCompleted} deleteTask={deleteTask} tasks={tasks} />
       <TaskInput addTask={addTask} />
     </SafeAreaView>
   )

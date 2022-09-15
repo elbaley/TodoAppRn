@@ -1,14 +1,14 @@
 import {StyleSheet, Text, View, FlatList} from 'react-native'
-import React, {useState} from 'react'
+import React from 'react'
 import Task from './Task'
 
-const List = ({tasks, toggle}) => {
+const List = ({tasks, toggle, deleteTask}) => {
   function renderTask({item}) {
-    return <Task toggle={toggle} task={item} />
+    return <Task toggle={toggle} task={item} deleteTask={deleteTask} />
   }
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tasks</Text>
+      <Text style={styles.title}>⭐️ Tasks</Text>
       <FlatList data={tasks} renderItem={renderTask} />
     </View>
   )
